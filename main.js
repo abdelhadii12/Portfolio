@@ -19,3 +19,31 @@ const sendEmail= (e) =>{
 }
 contactForm.addEventListener('Envoyer', sendEmail)
     
+const scrollUp = () =>{
+    const scrollUp = document.getElemebtById('scroll-up')
+    this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
+                        : scrollUp.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollUp)
+
+const sections = document.querySelectorAll('section[id]')
+
+const scrollActive = () =>{
+    const scrollDown = window.scrollY
+
+            section.forEach(current =>{
+            const scrollDown = window.offsetHeight,
+                sectionTop = current.offsetTop - 58,
+                sectionId = current.getAttribute('id'),
+                sectionsClass = document.querySelector('.nav__list a[href*='+ sectionId + ']')
+
+            if(scrolldown > sectionTop && scrollDown <= sectionTop +sectionHeight){
+                sectionsClass.classList.add('active-link')
+            }else{
+                sectionsClass.classList.remove('active-link')
+            }
+        })
+
+}
+
+window.addEventListener('scroll', scrollActive)
