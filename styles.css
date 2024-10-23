@@ -36,7 +36,7 @@
 
 
 }
-@media  and (min-width: 1168px) {
+@media  screen and (min-width: 1168px) {
     :root {
     --biggest-font-size: 3.5rem;
     --h1-font-size: 2.25rem;
@@ -593,6 +593,39 @@ font-size: var(--h2-font-size);
 }
 
 .show-scroll{
-    bottom: 8rem;
+    bottom: 8rem; 
+}
 
+.experience__container{
+    row-gap: 2rem;
+}
+
+.experience__card{
+    display: grid;
+    row-gap: 1rem;
+}
+
+.experience__company{
+    font-size: var(--h2-font-size);
+}
+
+.experience__data{
+    background-color: var(--countainer-color);
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+}
+
+.experience__profession{
+    font-size: var(--h3-font-size);
+    margin-bottom: .5rem;
+}
+
+.experience__date{
+    display: block;
+    font-size: var(--smaller-font-size);
+    margin-bottom: 1rem;
+}
+
+.experience__description{
+    color: var(--text-color);
 }
