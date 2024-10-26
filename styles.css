@@ -234,9 +234,10 @@ img {
 }
 
 .info__img{
-    width: 100px;
+    width: full;
+    height: auto;
     justify-self: center;
-    align-self: flex-end;
+    align-self: flex-start;
 }
 
 .info__description{
@@ -637,8 +638,16 @@ font-size: var(--h2-font-size);
     .nav{
         padding: 1rem;
     }
+    .perfil__img{
+        align-self: flex-start;
+    }
 }
-
+@media screen and (max-width : 400px){
+    .perfil__img{
+        align-self: self-start;
+        padding: 2rem;
+    }
+}
 /*for meduimm devices*/
 @media screen and (min-width : 540px){
     .nav{
@@ -646,6 +655,9 @@ font-size: var(--h2-font-size);
     }
     .nav__list{
         column-gap: 1.25rem;
+    }
+    .perfil__img{
+        align-self: flex-start;
     }
 
     .home__container,
@@ -665,6 +677,9 @@ font-size: var(--h2-font-size);
     }
     .perfil{
         height: 100%;
+    }
+    .perfil__img{
+        padding: 15px;
     }
 
     .projects__container,
@@ -721,6 +736,7 @@ font-size: var(--h2-font-size);
     }
     .perfil__img{
         width: 450px;
+        align-self: center;
     }
     .perfil__data{
         width: 370px;

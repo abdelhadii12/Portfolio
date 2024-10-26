@@ -48,3 +48,14 @@ const scrollActive = () =>{
 
 window.addEventListener('scroll', scrollActive)
 
+const  sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+})
+
+sr.reveal(`.perfil`)
+sr.reveal(`.info`, {origin: 'left', delay: 2000})
+sr.reveal(`.skills`, {origin: 'left', delay: 50000})
+sr.reveal(`.about`, {origin: 'right', delay: 10200})
