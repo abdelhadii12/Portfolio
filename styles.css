@@ -226,9 +226,10 @@ img {
 
 .info__image{
     background: var(--conic-gradient);
-    height: 100px;
+    
     border-radius: 2rem;
     display: grid;
+    width: 100%;
     margin-block: 1.5rem;
     overflow: hidden;
 }
@@ -635,6 +636,10 @@ font-size: var(--h2-font-size);
     .container{
         margin-inline: 1rem;
     }
+    .about__img{ 
+        width: 100%;
+        height: 100%;
+    }
     .nav{
         padding: 1rem;
     }
@@ -642,10 +647,14 @@ font-size: var(--h2-font-size);
         align-self: flex-start;
     }
 }
-@media screen and (max-width : 400px){
+@media screen and (max-width : 450px){
     .perfil__img{
         align-self: self-start;
         padding: 2rem;
+    }
+    .about__img{ 
+        width: 100%;
+
     }
 }
 /*for meduimm devices*/
@@ -653,9 +662,13 @@ font-size: var(--h2-font-size);
     .nav{
         width: max-content
     }
+    .about__img{ 
+        width: 100%;
+    }
     .nav__list{
         column-gap: 1.25rem;
     }
+    
     .perfil__img{
         align-self: flex-start;
     }
@@ -680,6 +693,9 @@ font-size: var(--h2-font-size);
     }
     .perfil__img{
         padding: 15px;
+    }
+    .about__img{ 
+        width: 100%;
     }
 
     .projects__container,
@@ -715,7 +731,9 @@ font-size: var(--h2-font-size);
     .container{
         margin-inline: auto;
     }
-
+    .about__img{ 
+        width: 100%;
+    }
     .section{
         padding-block: 3rem 4rem;
     }
