@@ -9,15 +9,15 @@ const sendEmail= (e) =>{
         contactMessage.textContent = 'Message envoyé!'
 
         setTimeout(() =>{
-            contactMessage.textContent=''
-        },5000)
+            contactMessage.textContent= ''
+        }, 5000)
 
         contactForm.reset()
     },() =>{
         contactMessage.textContent = 'Message non envoyé'
     })
 }
-contactForm.addEventListener('Envoyer', sendEmail)
+contactForm.addEventListener('submit', sendEmail)
     
 const scrollUp = () =>{
     const scrollUp = document.getElemebtById('scroll-up')
