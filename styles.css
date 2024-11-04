@@ -308,7 +308,7 @@ font-size: var(--h2-font-size);
     transition: transform .4s;
 }
 
-.skills__items:hover{
+.skills__item:hover{
     transform: translateY(-.25rem);
 }
 
