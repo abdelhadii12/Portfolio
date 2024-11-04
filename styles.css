@@ -832,8 +832,10 @@ font-size: var(--h2-font-size);
      } 
      .experience__data{
         padding: 2rem;
+       
         border-radius: 2rem;
      }
+   
 
      .contact__container{
         grid-template-columns: 620px;
