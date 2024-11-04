@@ -5,15 +5,16 @@ const sendEmail= (e) =>{
     e.preventDefault()
 
     emailjs.sendForm('service_b30on9k','template_ivqakml','#contact-form','FNPN3DEFwQW09edRF')
+    
     .then(() =>{
         contactMessage.textContent = 'Message envoyé!'
 
         setTimeout(() =>{
-            contactMessage.textContent= ''
+            contactMessage.textContent = ''
         }, 5000)
 
         contactForm.reset()
-    },() =>{
+    }, () =>{
         contactMessage.textContent = 'Message non envoyé'
     })
 }
@@ -35,9 +36,9 @@ const scrollActive = () =>{
             const sectionHeight = current.offsetHeight,
                 sectionTop = current.offsetTop - 58,
                 sectionId = current.getAttribute('id'),
-                sectionsClass = document.querySelector('.nav__list a[href*='+ sectionId + ']')
+                sectionsClass = document.querySelector('.nav__list a[href*=' + sectionId + ']')
 
-            if(scrolldown > sectionTop && scrollDown <= sectionTop + sectionHeight){
+            if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
                 sectionsClass.classList.add('active-link')
             }else{
                 sectionsClass.classList.remove('active-link')
