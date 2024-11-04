@@ -56,6 +56,6 @@ const  sr = ScrollReveal({
 })
 
 sr.reveal(`.perfil`)
-sr.reveal(`.info`, {origin: 'left', delay: 2000})
-sr.reveal(`.skills`, {origin: 'left', delay: 50000})
-sr.reveal(`.about`, {origin: 'right', delay: 10200})
+sr.reveal(`.info`, {origin: 'left', delay: 100})
+sr.reveal(`.skills`, {origin: 'left', delay: 200})
+sr.reveal(`.about`, {origin: 'right', delay: 1000})
