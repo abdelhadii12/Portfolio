@@ -615,10 +615,13 @@ font-size: var(--h2-font-size);
     background-color: var(--countainer-color);
     padding: 1.5rem;
     border-radius: 1.5rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .experience__profession{
-    font-size: var(--h3-font-size);
+    font-size: var(--h2-font-size);
     margin-bottom: .5rem;
 }
 
@@ -889,4 +892,101 @@ font-size: var(--h2-font-size);
     }
 
 
+    
+
+/* Styles pour la section formations */
+.experience__container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.education__item {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.education__item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.education__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+.experience__profession {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--first-color);
+    margin-right: 1rem;
+}
+
+.experience__date {
+    background: rgba(157, 78, 221, 0.1);
+    color: var(--first-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.experience__institution {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    padding-left: 0.5rem;
+}
+
+
+@media (max-width: 768px) {
+    .education__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .experience__date {
+        margin-top: 0.5rem;
+    }
+    
+    .experience__profession,
+    .experience__institution {
+        font-size: 0.9rem;
+    }
+}
+
+.popup {
+    max-width: 80%;
+    width: 400px;
+    padding: 2rem;
+    background-color: var(--container-color);
+    border: 2px solid var(--first-color);
+    animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+    from {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.popup button {
+    background-color: var(--first-color);
+    padding: 0.5rem 1.5rem;
+    margin-top: 1.5rem;
+    transition: all 0.3s;
+}
+
+.popup button:hover {
+    background-color: var(--first-color-alt);
+    transform: translateY(-2px);
+}
 }

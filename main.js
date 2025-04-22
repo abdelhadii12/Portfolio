@@ -60,3 +60,22 @@ sr.reveal(`.perfil`)
 sr.reveal(`.info`, {origin: 'left', delay: 100})
 sr.reveal(`.skills`, {origin: 'left', delay: 200})
 sr.reveal(`.about`, {origin: 'right', delay: 1000})
+
+
+
+function showPopup(event, projectName = "") {
+    event.preventDefault();
+    const popup = document.getElementById("popup");
+    popup.innerHTML = `
+        <p>Le projet ${projectName ? '"' + projectName + '" ' : ''}n'est pas encore en ligne. Il sera publié prochainement !</p>
+        <button onclick="closePopup()">OK</button>
+    `;
+    popup.style.display = "block";
+    document.getElementById("overlay").style.display = "block";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+}
+

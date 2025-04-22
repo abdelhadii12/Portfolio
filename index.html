@@ -7,6 +7,128 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
     <link rel="stylesheet" href="styles.css">
     <title>Abdelhadi's Portfolio</title>
+    <script>
+        function showPopup(event) {
+            event.preventDefault(); // Empêche l'ouverture du lien
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+        function showPopup(event) {
+            event.preventDefault(); // Empêche l'ouverture du lien
+            document.getElementById("popup2").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup2").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+    <style>
+        /* Style de la pop-up */
+        .popup {
+            overflow: auto;
+            max-width: 90%;
+            max-height: 90%;
+            display: none;
+            position: fixed;
+            top: 50%;
+            color: rgb(255, 255, 255);
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            transform: translate(-50%, -50%);
+            background-color: rgb(97, 94, 94);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1000;
+            transition: transform 0.8s ease-out, opacity 0.6s ease-out;
+        }
+        
+
+        .popup button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            border: none;
+            background-color: #ff4d4d;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .popup button:hover {
+            background-color: #e60000;
+        }
+
+        /* Fond semi-transparent derrière la pop-up */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: #ff4d4d;
+            backdrop-filter: blur(100px);
+            z-index: 999;
+        }
+    </style>
+    <style>
+        /* Style de la pop-up */
+        .popup2 {
+            overflow: auto;
+            max-width: 90%;
+            max-height: 90%;
+            display: none;
+            position: fixed;
+            top: 50%;
+            color: rgb(255, 255, 255);
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            transform: translate(-50%, -50%);
+            background-color: rgb(97, 94, 94);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1000;
+            transition: transform 0.8s ease-out, opacity 0.6s ease-out;
+        }
+        
+
+        .popup2 button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            border: none;
+            background-color: #ff4d4d;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .popup2 button:hover {
+            background-color: #e60000;
+        }
+
+        /* Fond semi-transparent derrière la pop-up */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: #ff4d4d;
+            backdrop-filter: blur(100px);
+            z-index: 999;
+        }
+    </style>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-876VY755E2"></script>
 <script>
@@ -66,7 +188,12 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="overlay" id="overlay" onclick="closePopup()"></div>
+                <div class="popup" id="popup">
+                    <p>Le projet n'est pas encore en ligne. Il sera publié prochainement !</p>
+                    <button onclick="closePopup()">OK</button>
+                </div>
+                
                 <div class="info">
 
                     <div class="info__data">
@@ -79,7 +206,7 @@
                 <p class="info__description">
                     Étudiant en 2ème année de Bachelor Développeur à l'IPI, je suis passionné par la programmation, la création de sites web et de logiciels.
                 </p>
-                <a href="CV STAGE FINALE.pdf" download target="_blank" class="button button__black">Télécharger mon CV</a>
+                <a href="Abdelhadi-Alioui--Alternance.pdf" download target="_blank" class="button button__black">Télécharger mon CV</a>
             </div>
             <div class="about">
                <h3 class="about__name">
@@ -134,12 +261,13 @@
             </div>
             </div>
         </section>
+        
         <section class="projects section" id="projects">
             <h2 class="section__title">Projets Récents</h2>
             <div class="projects__container container grid">
                 <article class="projects__card">
-                    <a href="#" target="_blank" class="projects__image">
-                        <img src="img/Projet-mesi.png" alt="image" class="projects__img">
+                    <a href="#" target="_blank" class="projects__image" onclick="showPopup(event)">
+                        <img src="img/Projet-mesi.png" alt="Projet Mesi" class="projects__img">
                     </a>
                     <div class="projects__data">
                         <h3 class="projects__name">Projet-Mesi</h3>
@@ -163,12 +291,36 @@
                         </div>
                         <a href="#" target="_blank" class="projects__button">
                             <i class="ri-link"></i>
-                            <span>Découvrez le Projet</span>
+                            <span onclick="showPopup(event)">Découvrez le Projet</span>
                         </a>
                     </div>
                 </article>
                 <article class="projects__card">
-                    <a href="#" target="_blank" class="projects__image">
+                    <a href="#" target="_blank" class="projects__image" onclick="showPopup(event)">
+                        <img src="img/image.png" alt="Medicare" class="projects__img">
+                    </a>
+                    <div class="projects__data">
+                        <h3 class="projects__name">Medicare - Rendez-vous médicaux</h3>
+                        <p class="projects--descriptions">
+                            <strong>Solution complète de gestion de rendez-vous médicaux</strong> permettant aux patients de prendre rendez-vous en ligne et aux praticiens d'optimiser leur planning. Développée avec <strong>Angular 18</strong> pour une interface fluide et <strong>Spring Boot</strong> pour un backend performant, avec sécurisation des données médicales via <strong>JWT</strong> et stockage dans <strong>MongoDB</strong>.
+                        </p>
+                        <div class="projects__skills">
+                            <img src="img/angular-icon-1.svg" alt="Angular" class="projects__skill">
+                            <img src="img/spring_boot.png" alt="Spring Boot" class="projects__skill">
+                            <img src="img/java.jpg" alt="Java" class="projects__skill">
+                            <img src="img/mongodb-ar21.svg" alt="MongoDB" class="projects__skill">
+                        </div>
+                        <a href="#" target="_blank" class="projects__button" onclick="showPopup(event)">
+                            <i class="ri-link"></i>
+                            <span>Découvrez le Projet</span>
+                        </a>
+                    </div>
+                </article>
+                
+                
+                <article class="projects__card">
+                    
+                    <a href="#" target="_blank" class="projects__image" onclick="showPopup(event)">
                         <img src="img/Projet-Arduino.jpg" alt="image" class="projects__img">
                     </a>
                     <div class="projects__data">
@@ -186,7 +338,7 @@
                         </div>
                         <a href="#" target="_blank" class="projects__button">
                             <i class="ri-link"></i>
-                            <span>Découvrez le Projet</span>
+                            <span onclick="showPopup(event)">Découvrez le Projet</span>
                         </a>
                     </div>
                 </article>
@@ -299,28 +451,51 @@
         <section class="experience section" id="experience">
             <h2 class="section__title">Expérience</h2>
 
-            <div class="experience__container countainer grid">
-                <article class="experience__card">
-                    <h2 class="experience__company">Diplômes et Formations</h2>
-                    
-                    <div class="experience__data">
-                        <h3 class="experience__profession">B2 - Bachelor Développeur</h3>
-                        <span class="experience__date">2024</span>
-                        <p class="experience_description" >
-                            IPI - école d'informatique - Lyon
-                        </p>
-                        <h3>--------------------------------</h3>
-                        <h3></h3>
-                        <h3 class="experience__profession">DEUST - MIP (Math-Informatique-Physique)</h3>
-                        
-                        <span class="experience__date">2022-2024</span>
-                        <p class="experience_description">
-                            FST - Faculté de Science et Technique -Fès
-                        </p>
-                    </div>
-                </article>
-            </div>
-        </section>
+            <section class="experience section" id="experience">
+                <h2 class="section__title">Formations</h2>
+            
+                <div class="experience__container container grid">
+                    <article class="experience__card">
+                        <div class="experience__data">
+                            <!-- Item 1 -->
+                            <div class="education__item">
+                                <div class="education__header">
+                                    <h3 class="experience__profession">B3 - Concepteur Développeur Full-Stack</h3>
+                                    <span class="experience__date">2025 – 2026 (en cours)</span>
+                                </div>
+                                <p class="experience__institution">IPI École d'Informatique - Lyon, France</p>
+                            </div>
+            
+                            <!-- Item 2 -->
+                            <div class="education__item">
+                                <div class="education__header">
+                                    <h3 class="experience__profession">B2 - Bachelor Développeur</h3>
+                                    <span class="experience__date">2024 – 2025</span>
+                                </div>
+                                <p class="experience__institution">IPI École d'Informatique - Lyon, France</p>
+                            </div>
+            
+                            <!-- Item 3 -->
+                            <div class="education__item">
+                                <div class="education__header">
+                                    <h3 class="experience__profession">DEUST - MIP (Maths/Info/Physique)</h3>
+                                    <span class="experience__date">2022 – 2024</span>
+                                </div>
+                                <p class="experience__institution">Faculté des Sciences et Techniques - Fès, Maroc</p>
+                            </div>
+            
+                            <!-- Item 4 -->
+                            <div class="education__item">
+                                <div class="education__header">
+                                    <h3 class="experience__profession">Baccalauréat Scientifique</h3>
+                                    <span class="experience__date">2021 – 2022</span>
+                                </div>
+                                <p class="experience__institution">Lycée Ibn Atir - Fès, Maroc</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
 
         <section class="contact section" id="contact">
             <h2 class="section__title">Contactez-moi</h2>
@@ -379,7 +554,7 @@
     <a href="#" class="scrollup" id="scroll-up">
         <i class="ri-arrow-up-line"></i>
     </a>
-
+    
     <script src="scrollreveal.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
