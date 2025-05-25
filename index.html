@@ -13,21 +13,21 @@
             document.getElementById("popup").style.display = "block";
             document.getElementById("overlay").style.display = "block";
         }
+        function showPopupV2(event) {
+            event.preventDefault(); // Empêche l'ouverture du lien
+            document.getElementById("popupV2").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
 
         function closePopup() {
             document.getElementById("popup").style.display = "none";
             document.getElementById("overlay").style.display = "none";
         }
-        function showPopup(event) {
-            event.preventDefault(); // Empêche l'ouverture du lien
-            document.getElementById("popup2").style.display = "block";
-            document.getElementById("overlay").style.display = "block";
-        }
-
-        function closePopup() {
-            document.getElementById("popup2").style.display = "none";
+        function closePopupV2() {
+            document.getElementById("popupV2").style.display = "none";
             document.getElementById("overlay").style.display = "none";
         }
+        
     </script>
     <style>
         /* Style de la pop-up */
@@ -65,6 +65,41 @@
         .popup button:hover {
             background-color: #e60000;
         }
+        .popupV2 {
+            overflow: auto;
+            max-width: 90%;
+            max-height: 90%;
+            display: none;
+            position: fixed;
+            top: 50%;
+            color: rgb(255, 255, 255);
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            transform: translate(-50%, -50%);
+            background-color: rgb(97, 94, 94);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1000;
+            transition: transform 0.8s ease-out, opacity 0.6s ease-out;
+        }
+        
+
+        .popupV2 button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            border: none;
+            background-color: #ff4d4d;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .popupV2 button:hover {
+            background-color: #e60000;
+        }
+
 
         /* Fond semi-transparent derrière la pop-up */
         .overlay {
@@ -194,6 +229,11 @@
                     <button onclick="closePopup()">OK</button>
                 </div>
                 
+                <div class="popupV2" id="popupV2">
+                    <p>Projet matériel réalisé avec Arduino — non hébergé en ligne</p>
+                    <button onclick="closePopupV2()">OK</button>
+                </div>
+                
                 <div class="info">
 
                     <div class="info__data">
@@ -320,7 +360,7 @@
                 
                 <article class="projects__card">
                     
-                    <a href="#" target="_blank" class="projects__image" onclick="showPopup(event)">
+                    <a href="#" target="_blank" class="projects__image" onclick="showPopupV2(event)">
                         <img src="img/Projet-Arduino.jpg" alt="image" class="projects__img">
                     </a>
                     <div class="projects__data">
@@ -336,9 +376,9 @@
                             <img src="img/Arduino.png" alt="image" class="projects__skill">
                             
                         </div>
-                        <a href="#" target="_blank" class="projects__button">
+                        <a href="#" target="_blank" class="projects__button" onclick="showPopupV2(event)">
                             <i class="ri-link"></i>
-                            <span onclick="showPopup(event)">Découvrez le Projet</span>
+                            <span onclick="showPopupV2(event)">Découvrez le Projet</span>
                         </a>
                     </div>
                 </article>
