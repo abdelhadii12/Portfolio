@@ -285,8 +285,12 @@ img {
     overflow: hidden;
 }
 .about__img{
-    width: 250px;
+    height: 100%;
+    display: block;
+    margin-top: 16px;
     justify-self:center;
+    object-fit: cover;
+    align-items: center;
     transform: translateY(-2.5rem);
 }
 
